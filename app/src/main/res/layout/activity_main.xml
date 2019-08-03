@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="#c45924"
+        android:textSize="18sp"
+        android:text="百度音乐" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/btnToSearch"
+        android:layout_alignStart="@id/btnToSearch"
+        android:layout_alignTop="@id/btnToSearch"
+        android:layout_alignBottom="@id/btnToSearch"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="-6dp"
+        android:layout_marginRight="-6dp"
+        android:layout_marginTop="-6dp"
+        android:layout_marginBottom="-6dp"/>
+    <ImageButton
+        android:id="@+id/btnToSearch"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_youtube_searched_for_black_24dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="TODO" />
+
+    <RadioGroup
+        android:id="@+id/radioGrup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/text1"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioNew"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:checked="true"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/selector_tab"
+            android:text="@string/newsong" />
+
+        <RadioButton
+            android:id="@+id/radioHot"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/selector_tab"
+            android:text="热歌榜" />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rlBottomBar"
+        android:layout_below="@+id/radioGrup"
+        android:layout_alignParentStart="true" />
+
+    <RelativeLayout
+        android:id="@+id/rlBottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#c45924"
+        android:paddingBottom="3dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="3dp">
+
+      <com.zuowei.circleimageview.CircleImageView
+          android:id="@+id/ivCMAlbum"
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:background="#c45924"
+          android:layout_marginEnd="10dp"
+          android:scaleType="centerCrop"
+          android:src="@drawable/xuexi"/>
+
+
+        <TextView
+            android:id="@+id/tvCMTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:singleLine="true"
+            android:layout_alignTop="@id/ivCMAlbum"
+            android:layout_toRightOf="@id/ivCMAlbum"
+            android:gravity="top"
+            android:textColor="#ffffff"
+            android:text="歌曲名称"/>
+
+        <TextView
+            android:id="@+id/tvCMSinger"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@id/tvCMTitle"
+            android:layout_below="@id/tvCMTitle"
+            android:singleLine="true"
+            android:textSize="10sp"
+            android:gravity="center_vertical"
+            android:textColor="#ffffff"
+            android:text="歌手名称"/>
+
+        <ImageButton
+            android:id="@+id/ibPMMenue"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/ibPMBar"
+            android:layout_marginRight="10dp"
+            android:layout_toStartOf="@+id/ibPMBar"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_menu_black_24dp" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/ibPMBar"
+            android:layout_alignLeft="@id/ibPMBar"
+            android:layout_alignTop="@id/ibPMBar"
+            android:layout_alignBottom="@id/ibPMBar"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="-6dp"
+            android:layout_marginRight="-6dp"
+            android:layout_marginTop="-6dp"
+            android:layout_marginBottom="-6dp"/>
+        <ImageButton
+            android:id="@+id/ibPMBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_play_circle_filled_black_24dp"/>
+
+        <ImageButton
+            android:id="@+id/btnCircle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/ibPMMenue"
+            android:layout_alignTop="@+id/ibPMMenue"
+            android:src="@drawable/ic_autorenew_black_24dp"/>
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/rlPlayMusic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/ivPMBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tvPMTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:text="歌曲名称"/>
+        <TextView
+            android:id="@+id/tvPMSinger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvPMTitle"
+            android:layout_centerHorizontal="true"
+            android:textColor="#66ffff"
+            android:textSize="12sp"
+            android:layout_marginTop="7dp"
+            android:text="歌手名称"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/ivPMAlbum"
+            android:layout_alignLeft="@id/ivPMAlbum"
+            android:layout_alignTop="@id/ivPMAlbum"
+            android:layout_alignBottom="@id/ivPMAlbum"
+            android:background="#ffffff"
+            android:layout_marginLeft="-6dp"
+            android:layout_marginRight="-6dp"
+            android:layout_marginTop="-6dp"
+            android:layout_marginBottom="-6dp"/>
+
+        <ImageView
+            android:id="@+id/ivPMAlbum"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="centerCrop"
+            android:layout_below="@id/tvPMSinger"
+            android:background="#ffffff"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/tvPMLrc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivPMAlbum"
+            android:layout_centerHorizontal="true"
+            android:textColor="#c45924"
+            android:layout_marginTop="20dp"
+            android:singleLine="true"
+            android:textSize="17dp"
+            android:text="兄弟我尽力了，实在没找到歌词."/>
+
+        <SeekBar
+            android:id="@+id/seekBar"
+           android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@id/tvPMLrc"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:maxHeight="3dp"
+            android:minHeight="3dp"
+            android:progressDrawable="@drawable/seekbar_bg"
+            android:thumb="@drawable/seekbar_thumb_bg"
+            />
+
+        <TextView
+            android:id="@+id/tvPMCurrentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/seekBar"
+            android:layout_below="@id/seekBar"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:text="00:30"/>
+        <TextView
+            android:id="@+id/tvPMTotalTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/seekBar"
+            android:layout_below="@id/seekBar"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:text="03:30"/>
+
+
+        <RelativeLayout
+            android:id="@+id/reLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@id/tvPMTotalTime"
+            android:layout_alignLeft="@id/tvPMCurrentTime"
+            android:layout_below="@id/tvPMCurrentTime"
+            android:gravity="clip_vertical|center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/ivPMPrevious"
+                android:layout_alignLeft="@id/ivPMPrevious"
+                android:layout_alignTop="@id/ivPMPrevious"
+                android:layout_alignBottom="@id/ivPMPrevious"
+                android:background="#ffffff"
+                android:layout_marginLeft="-6dp"
+                android:layout_marginRight="-6dp"
+                android:layout_marginTop="-6dp"
+                android:layout_marginBottom="-6dp"/>
+            <ImageButton
+                android:id="@+id/ivPMPrevious"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="41dp"
+                android:layout_marginStart="22dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_skip_previous_black_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/ivPMStartOrPause"
+                android:layout_alignLeft="@id/ivPMStartOrPause"
+                android:layout_alignTop="@id/ivPMStartOrPause"
+                android:layout_alignBottom="@id/ivPMStartOrPause"
+                android:background="#ffffff"
+                android:layout_marginLeft="-6dp"
+                android:layout_marginRight="-6dp"
+                android:layout_marginTop="-6dp"
+                android:layout_marginBottom="-6dp"/>
+            <ImageButton
+                android:id="@+id/ivPMStartOrPause"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignTop="@+id/ivPMPrevious"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_pause_circle_filled_black_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/ivPMNext"
+                android:layout_alignLeft="@id/ivPMNext"
+                android:layout_alignTop="@id/ivPMNext"
+                android:layout_alignBottom="@id/ivPMNext"
+                android:background="#ffffff"
+                android:layout_marginLeft="-6dp"
+                android:layout_marginRight="-6dp"
+                android:layout_marginTop="-6dp"
+                android:layout_marginBottom="-6dp"/>
+            <ImageButton
+                android:id="@+id/ivPMNext"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/ivPMStartOrPause"
+                android:layout_marginEnd="14dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_skip_next_black_24dp" />
+
+
+    </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+         android:id="@+id/rlSearchMusic"
+         android:layout_width="match_parent"
+         android:layout_height="500dp"
+         android:background="#ffbc88"
+         android:visibility="invisible">
+         <LinearLayout
+             android:id="@+id/llSearch"
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+             android:background="#2441d4"
+             android:orientation="horizontal">
+
+             <Button
+                 android:id="@+id/btnCancel"
+                 android:layout_width="60dp"
+                 android:layout_height="50dp"
+                 android:text="取消"
+                 android:textColor="#ffffff"
+                 android:background="@null"
+                 android:layout_marginLeft="5dp"/>
+             <EditText
+                 android:id="@+id/etSearch"
+                 android:layout_width="0dp"
+                 android:layout_height="50dp"
+                 android:layout_weight="1"
+                 android:background="@null"
+                 android:singleLine="true"
+                 android:layout_marginLeft="10dp"
+                 android:textSize="18sp"
+                 android:textColor="#ffffff"
+                 android:hint="请输入歌名"
+                 android:textColorHint="#ffffff"/>
+             <Button
+                 android:id="@+id/btnSearch"
+                 android:layout_width="50dp"
+                 android:layout_height="60dp"
+                 android:textColor="#ffffff"
+                 android:text="搜索"
+                 android:background="@null"
+                 android:layout_marginEnd="5dp" />
+         </LinearLayout>
+
+         <ListView
+             android:id="@+id/lvSearchMusic"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/llSearch"
+             android:divider="#000000"/>
+
+     </RelativeLayout>
+
+
+</RelativeLayout>
